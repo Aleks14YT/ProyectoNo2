@@ -1,0 +1,36 @@
+Código 5
+
+int[] organizarChaquiras(int[] colores) {
+    int[] contador = new int[6];
+    
+    for (int color : colores) {
+        contador[color]++;
+    }
+    
+    List<Integer> resultado = new ArrayList<>();
+    
+    int[] orden = {1, 2, 3, 4, 5};
+    
+    boolean agregarPares = true;
+    while (agregarPares) {
+        agregarPares = false;
+        for (int color : orden) {
+            if (contador[color] >= 2) {
+                resultado.add(color);
+                resultado.add(color);
+                contador[color] -= 2;
+                agregarPares = true;
+            }
+        }
+    }
+
+    return resultado.stream().mapToInt(i -> i).toArray();
+}
+
+
+Como mandar a llamar al método
+
+int[] colores = {1,5,4,5,3,3,2,1,1,2,3,4,4,3,3,2,2,5,5,5,1,1,2,3,4,5,3,3,2,1};
+int[] resultado = organizarChaquiras(colores);
+
+System.out.println(java.util.Arrays.toString(resultado));

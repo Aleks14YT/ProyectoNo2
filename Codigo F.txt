@@ -1,0 +1,59 @@
+Codigo 6
+
+creamos un clase dentro de Jshell
+
+import java.util.HashSet;
+
+class Imagen {
+    private int renglones; 
+    private int columnas;  
+    private int[] pixeles; 
+
+    public Imagen(int renglones, int columnas, int[] pixeles) {
+        this.renglones = renglones;
+        this.columnas = columnas;
+        this.pixeles = pixeles;
+    }
+
+    public int[] getPixeles() {
+        return this.pixeles;
+    }
+
+    public int getRenglones() {
+        return this.renglones;
+    }
+
+    public int getColumnas() {
+        return this.columnas;
+    }
+}
+
+Despues hacemos el metodo
+
+int[] obtenerColoresUnicos(Imagen imagen) {
+    HashSet<Integer> coloresUnicos = new HashSet<>();
+
+    for (int pixel : imagen.getPixeles()) {
+        coloresUnicos.add(pixel);
+    }
+
+    int[] resultado = new int[coloresUnicos.size()];
+    int i = 0;
+    for (int color : coloresUnicos) {
+        resultado[i++] = color;
+    }
+
+    return resultado;
+}
+
+Como mandar a llamar al metodo
+
+int[] pixeles = {0xFFFFFF, 0x000000, 0xFFFFFF};
+Imagen imagen = new Imagen(2,3, pixeles);
+int[] coloresUnicos = obtenerColoresUnicos(imagen);
+
+Para imprimir los resultados
+for (int color : coloresUnicos) {
+    System.out.printf("#%06X\n", color);
+}
+

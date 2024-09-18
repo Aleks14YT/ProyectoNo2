@@ -1,0 +1,16 @@
+Código 3
+
+public boolean esCapicua(int numero) {
+ int original = numero;
+    int invertido = 0;
+    while (numero != 0) {
+        int digito = numero % 10;
+        invertido = invertido * 10 + digito;
+        numero /= 10;
+    }
+    return original == invertido;
+}
+
+como llamar al método 
+
+esCapiacua (12321)

@@ -1,0 +1,15 @@
+Código 4
+
+int contarOcurrencias(float[] arreglo, float x) {
+    int contador = 0;
+    for (float numero : arreglo) {
+        if (numero == x) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+Como llamar al método 
+
+float[] numeros = {1.3f,2.6f,5.6f,1.3f,2.6f,1.2f};

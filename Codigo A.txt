@@ -1,0 +1,17 @@
+Codigo 1
+
+int contarDigitosPares(int num) {
+    int contador = 0;
+    while (num != 0) {
+        int digito = num % 10;
+        if (digito % 2 == 0) {
+            contador++;
+        }
+        num /= 10;
+    }
+    return contador;
+}
+
+como llamar al metodo 
+
+contarDigitosPares(123456)

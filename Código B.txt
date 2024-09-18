@@ -1,0 +1,12 @@
+Código 2
+
+boolean esPalindromo(String cadena) {
+    String inversa = new StringBuilder(cadena).reverse().toString();
+    return cadena.equals(inversa);
+}
+
+Como mandar a llamar al metodo
+
+esPalindromo("oso")
+
+nota: al ser un string hay que poner las comillas de lo contrario va a salir como un error
